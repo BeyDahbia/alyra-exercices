@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<script src =defi_1.js></script>
+		<title>Outil d'analyse bitcoin</title>
+		<meta charset="utf-8"/>
+	</head>
+	<body>
+		
+		<div>
+			<div>
+				<div>
+					<form>
+						<fieldset>
+						<legend>Outils d'analyse Bitcoin </legend><br>
+						<div>
+							<label for ="value_to_convert">Valeur à convertir :</label>
+							<input type="text" class="form-control" id="valueConvert" autofocus>
+						</div>
+						<br>
+						<div class="from-group">
+							<label for ="typeConvert">Choix de convertion : </label>
+							<select  id="typeConvert" >
+								<option value="">     Choisir </option>
+								<option value="1">    Hexadécimal => Décimal</option>
+								<option value="2">    Décimal     => Hexadécimal</option>
+								<option value="3">    Hexadécimal little endian => Hexadécimal </option>
+								<option value="4">    VarInt  => Décimal</option>
+								<option value="5">    Champ Bits => Cible correspondante</option>
+								<option value="6">    Cible => Difficulté</option>
+								<option value="7">    Script en Hexadécimal => Op codes correspondants.</option>
+							</select>
+						</div>
+						<br>
+						<button type="button" id="convert_button" onclick="test();" >Convertir</button>
+						</fieldset>
+                    </form>
+                </div>
+		    </div>
+        </div>
+       
+
+
+	</body>
+</html>
