@@ -26,10 +26,9 @@ contract SceneOuverte {
      else  return "FIN";
       }
       }
-      ////
+    
 
 
-      /////Exercice 3.1.1.1 Passer à l’artiste suivant/////
 
 
  
