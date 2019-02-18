@@ -1,41 +1,45 @@
-async function creatMetamaskDapp() {
-	
-
-
-
-const ballotAdress="0xdf46ceac79a089d07c8ffd7f63f0f3fdd6ad4672";	
-const abi= [
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "candidat",
-				"type": "address"
-			},
-			{
-				"name": "client",
-				"type": "address"
-			}
-		],
-		"name": "postuler",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
+const ABI= [
 	{
 		"constant": true,
 		"inputs": [
 			{
-				"name": "_participant",
-				"type": "address"
+				"name": "",
+				"type": "uint256"
 			}
 		],
-		"name": "estAdmin",
+		"name": "offres",
 		"outputs": [
 			{
-				"name": "",
-				"type": "bool"
+				"name": "entreprise",
+				"type": "address"
+			},
+			{
+				"name": "illustAccepter",
+				"type": "address"
+			},
+			{
+				"name": "titre",
+				"type": "string"
+			},
+			{
+				"name": "remuneration",
+				"type": "uint256"
+			},
+			{
+				"name": "delai",
+				"type": "uint256"
+			},
+			{
+				"name": "etat",
+				"type": "uint8"
+			},
+			{
+				"name": "reputationMin",
+				"type": "uint256"
+			},
+			{
+				"name": "hashUrl",
+				"type": "bytes32"
 			}
 		],
 		"payable": false,
@@ -43,10 +47,98 @@ const abi= [
 		"type": "function"
 	},
 	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "url",
+				"type": "string"
+			}
+		],
+		"name": "HashTravail",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "pure",
+		"type": "function"
+	},
+	{
 		"constant": false,
 		"inputs": [
 			{
-				"name": "client",
+				"name": "titre",
+				"type": "string"
+			},
+			{
+				"name": "remuneration",
+				"type": "uint256"
+			},
+			{
+				"name": "delai",
+				"type": "uint256"
+			},
+			{
+				"name": "reputationMin",
+				"type": "uint256"
+			}
+		],
+		"name": "ajouterDemande",
+		"outputs": [
+			{
+				"components": [
+					{
+						"name": "entreprise",
+						"type": "address"
+					},
+					{
+						"name": "illustAccepter",
+						"type": "address"
+					},
+					{
+						"name": "titre",
+						"type": "string"
+					},
+					{
+						"name": "remuneration",
+						"type": "uint256"
+					},
+					{
+						"name": "delai",
+						"type": "uint256"
+					},
+					{
+						"name": "etat",
+						"type": "uint8"
+					},
+					{
+						"name": "reputationMin",
+						"type": "uint256"
+					},
+					{
+						"name": "hashUrl",
+						"type": "bytes32"
+					},
+					{
+						"name": "candidats",
+						"type": "address[]"
+					}
+				],
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "entreprise",
 				"type": "address"
 			}
 		],
@@ -57,36 +149,93 @@ const abi= [
 		"type": "function"
 	},
 	{
-		"constant": false,
+		"constant": true,
 		"inputs": [
 			{
-				"name": "_demandeur",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "entreprises",
+		"outputs": [
+			{
+				"name": "entreprise",
 				"type": "address"
 			},
 			{
-				"name": "_reputationMin",
+				"name": "nom",
+				"type": "string"
+			},
+			{
+				"name": "reputation",
 				"type": "uint256"
 			}
 		],
-		"name": "ajouterDemande",
-		"outputs": [],
-		"payable": true,
-		"stateMutability": "payable",
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "listerOffres",
+		"outputs": [
+			{
+				"components": [
+					{
+						"name": "entreprise",
+						"type": "address"
+					},
+					{
+						"name": "illustAccepter",
+						"type": "address"
+					},
+					{
+						"name": "titre",
+						"type": "string"
+					},
+					{
+						"name": "remuneration",
+						"type": "uint256"
+					},
+					{
+						"name": "delai",
+						"type": "uint256"
+					},
+					{
+						"name": "etat",
+						"type": "uint8"
+					},
+					{
+						"name": "reputationMin",
+						"type": "uint256"
+					},
+					{
+						"name": "hashUrl",
+						"type": "bytes32"
+					},
+					{
+						"name": "candidats",
+						"type": "address[]"
+					}
+				],
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
 		"constant": false,
 		"inputs": [
 			{
-				"name": "participant",
-				"type": "address"
-			},
-			{
 				"name": "nom",
 				"type": "string"
 			}
 		],
-		"name": "inscription",
+		"name": "inscriptionIllustrateur",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
@@ -96,15 +245,43 @@ const abi= [
 		"constant": true,
 		"inputs": [
 			{
-				"name": "participant",
+				"name": "",
 				"type": "address"
 			}
 		],
-		"name": "estBanni",
+		"name": "demandes",
 		"outputs": [
 			{
-				"name": "",
-				"type": "bool"
+				"name": "entreprise",
+				"type": "address"
+			},
+			{
+				"name": "illustAccepter",
+				"type": "address"
+			},
+			{
+				"name": "titre",
+				"type": "string"
+			},
+			{
+				"name": "remuneration",
+				"type": "uint256"
+			},
+			{
+				"name": "delai",
+				"type": "uint256"
+			},
+			{
+				"name": "etat",
+				"type": "uint8"
+			},
+			{
+				"name": "reputationMin",
+				"type": "uint256"
+			},
+			{
+				"name": "hashUrl",
+				"type": "bytes32"
 			}
 		],
 		"payable": false,
@@ -115,44 +292,154 @@ const abi= [
 		"constant": false,
 		"inputs": [
 			{
-				"name": "participant",
+				"name": "entreprise",
 				"type": "address"
+			},
+			{
+				"name": "hashUrl",
+				"type": "bytes32"
 			}
 		],
-		"name": "aBannir",
+		"name": "livraison",
 		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
+		"payable": true,
+		"stateMutability": "payable",
 		"type": "function"
 	},
 	{
 		"constant": false,
 		"inputs": [
 			{
-				"name": "candidat",
+				"name": "nom",
+				"type": "string"
+			}
+		],
+		"name": "inscriptionEntreprise",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "illustrateurs",
+		"outputs": [
+			{
+				"name": "illustrateur",
 				"type": "address"
 			},
 			{
-				"name": "hashTravail",
-				"type": "bytes32"
+				"name": "nom",
+				"type": "string"
+			},
+			{
+				"name": "reputation",
+				"type": "uint256"
 			}
 		],
-		"name": "livraison",
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "entreprise",
+				"type": "address"
+			}
+		],
+		"name": "postuler",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function"
 	}
 ];
-//Metamask asks the dapp to use it 
-const addresses = await ethereum.enable();
+let dapp ={};
 
-//recuperer la premiere case du tableau addresses juste en haut 
-const address = addresses[0];
+    //async function createMetamaskDapp() {
+		const provider = new ethers.providers.Web3Provider(ethereum);
+		const addresses =  ethereum.enable();
+		const address = addresses[0]
+	    dapp = { address, provider };
+		let PlaceMarche = new ethers.Contract("0xea010d381623c173de30d04c35b870e3826b9edf",
+		 ABI,dapp.provider.getSigner());
+	//}
 
-//Creat ethers Provider pour se connecter à un provider
-const provider = new ethers.providers.Web3Provider(ethereum);
-const contract = new ethers.Contract(ballotAdress, abi, provider.getSigner());
+    /*
+		const addresses = await ethereum.enable();
+		//recuperer la premiere case du tableau addresses juste en haut 
+		const address = addresses[0];
+		//Connection au noeud forner par l'objet web3
+		const provider = new ethers.providers.Web3Provider(ethereum);
+		dapp = {address, provider};
+		let contartPlaceDeMarche = new ethers.Contract("0xe71726acc32b059e148cb669cf25924a15a7d8d1",ABI,dapp.provider);
+		console.log(dapp)
+        let illustrateur=await contartPlaceDeMarche();
+       */
+       
+
+		async function inscriptionIllustrateur() {
+			nom = document.getElementById('illustr').value; 
+			console.log("nomIllust "+nom);
+			await PlaceMarche.inscriptionIllustrateur(nom);
+			}
+		async function inscriptionEntreprise() {
+			nom = document.getElementById('entrep').value; 
+			await PlaceMarche.inscriptionIllustrateur(nom);
+			
+			}
+		async function ajouterDemande() {
+			titre= document.getElementById('ajDm1').value; 
+			
+			remun= document.getElementById('ajDm2').value; 
+			
+			delai= document.getElementById('ajDm3').value; 
+			
+			reput= document.getElementById('ajDm4').value; 
+
+			await PlaceMarche.ajouterDemande(titre, remun, delai, reput);
+						}	
+
+		async function postuler() {
+				 addr= document.getElementById('postule').value; 
+				await PlaceMarche.postuler(addr);
+				
+				}	
+		async function listerOffres() {
+				 
+		var offres = await PlaceMarche.listerOffres();
+		for (var i = 0; i < offres.length; i++) {
+			offres[i];
+			document.getElementById('offre').innerHTML="L'offre n° " +(i++)+" = "+offres[i];
+		}
+					
+					}	
+		async function accepterOffre() {
+					addr = document.getElementById('acceptOffr').value; 
+					await PlaceMarche.accepterOffre(addr);
+					
+					}	
+	
+		async function HashTravail() {
+					url = document.getElementById('depoOff').value; 
+					var hashT = await PlaceMarche.HashTravail(url);
+					document.getElementById('hash').innerHTML="Le Hash du travail = "+hashT;
+					
+					}	
+
+		async function livraison () {
+					addr = document.getElementById('addrs').value; 
+					await PlaceMarche.inscriptionIllustrateur(addr);
+					console.log("livraison "+addr);
+					}				
 
 
 
@@ -160,4 +447,3 @@ const contract = new ethers.Contract(ballotAdress, abi, provider.getSigner());
 
 
 
- 

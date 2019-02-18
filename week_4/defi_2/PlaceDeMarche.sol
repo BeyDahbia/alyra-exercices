@@ -75,10 +75,9 @@ contract PlaceMarche {
       require(illustrateurs[msg.sender].reputation >= demandes[entreprise].reputationMin);
      demandes[entreprise].candidats.push(msg.sender);
   }
-  function listerOffres()public return (Demande [] memory){
+  function listerOffres()public returns (Demande [] memory){
     return offres;
   }
-
 
 
  function accepterOffre(address entreprise) public {

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Place de marche</title>
+  </head>
+  <body>
+  <h1>Place de marche </h1>
+    
+    <button onclick="createMetamaskDapp()">Se connecter à Metamask</button><br>
+
+     <button onclick="inscriptionIllustrateur()" >Inscription illustrateur</button>
+    <input type="text" name="illustrator" id="illustr" placeholder=" Nom" size="25"></input><br>
+  
+    <button onclick="inscriptionEntreprise()">Inscription entreprise</button>
+    <input type="text" name="entreprise" id="entrep" placeholder=" Nom" size="25"></input><br>
+   
+    
+    <button onclick="ajouterDemande()" >Ajouter une demande</button>
+    <input type="text" name="ajouterDemande" id="ajDm1" size="25" placeholder=" Titre"></input>
+    <input type="text" name="ajouterDemande" id="ajDm2" size="25" placeholder=" Remuniration"></input>
+    <input type="text" name="ajouterDemande" id="ajDm3" size="25" placeholder=" Delai"></input>
+    <input type="text" name="ajouterDemande" id="ajDm4" size="25" placeholder=" Reputation"></input>
+    <br>
+    
+    
+    <button onclick="postuler()" >Postuler à une demande</button>
+    <input type="text" name="postuler" id="postule" size="25" placeholder=" Adresse entreprise" ></input><br>
+
+    <button onclick="listerOffres()" id ="lister" >Afficher les offres </button><br>
+        <p id="offre"></span></p>
+
+
+    
+    <button onclick="accepterOffre()"  >accepter une offre </button>
+    <input type="text" name="accepterOffre" id="acceptOffr" size="25"  placeholder=" Adresse entreprise"></input><br>
+
+   
+    <button onclick="HashTravail()">Deposer son travail</button>
+    <input type="text" name="deposerOffre" id="depoOff" size="25"  placeholder=" Url de votre travail"></input><br>
+    <p id="resultat"><span id="hash"></span></p>
+
+   
+    <button onclick="livraison()" >Livraison  du travail</button>
+    <input type="text" name="livraison" id="addrs" size="25" placeholder=" Adresse entreprise "></input>
+    <input type="text" name="ajouterDemande" id="hashTr" size="25" placeholder=" Hash de l'Url de depot"></input><br>
+    
+
+    <script src="https://cdn.ethers.io/scripts/ethers-v4.min.js"
+        charset="utf-8"
+        type="text/javascript"> </script>
+
+    <script src="index.js"></script>
+    <link  href="index.css" rel="stylesheet" type="text/css">
+  </body>
+</html>
+    
+

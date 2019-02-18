@@ -1,0 +1,24 @@
+h1{
+ font-size: 200%; 
+ color: navy; 
+ text-align: center;
+}
+button {
+	border-radius:12px 0 12px 0;
+	padding:6px 0 6px 0;
+	border:12px 0 12px 0;
+	background:#478bf9;
+	font: 15px Arial;
+	color:black;
+	margin: 10px;
+	 min-width : 15%
+}
+input{
+	 
+	border:12px 0 12px 0;
+	padding:6px 0 6px 0;
+	font: 15px Arial;
+	margin: 10px;
+}
+
+
