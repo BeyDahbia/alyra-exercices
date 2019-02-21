@@ -26,23 +26,22 @@
     <button onclick="postuler()" >Postuler à une demande</button>
     <input type="text" name="postuler" id="postule" size="25" placeholder=" Adresse entreprise" ></input><br>
 
-    <button onclick="listerOffres()" id ="lister" >Afficher les offres </button><br>
-        <p id="offre"></span></p>
-
-
     
     <button onclick="accepterOffre()"  >accepter une offre </button>
     <input type="text" name="accepterOffre" id="acceptOffr" size="25"  placeholder=" Adresse entreprise"></input><br>
 
    
     <button onclick="HashTravail()">Deposer son travail</button>
-    <input type="text" name="deposerOffre" id="depoOff" size="25"  placeholder=" Url de votre travail"></input><br>
-    <p id="resultat"><span id="hash"></span></p>
+    <input type="text" name="deposerOffre" id="depoOff" size="25"  placeholder=" Url de votre travail : "></input><br>
+    <div id="hash"></div>
 
    
     <button onclick="livraison()" >Livraison  du travail</button>
     <input type="text" name="livraison" id="addrs" size="25" placeholder=" Adresse entreprise "></input>
     <input type="text" name="ajouterDemande" id="hashTr" size="25" placeholder=" Hash de l'Url de depot"></input><br>
+
+     <button onclick="listerOffres()" id ="lister" >Afficher les offres </button><br>
+        <p id="offre"></span></p>
     
 
     <script src="https://cdn.ethers.io/scripts/ethers-v4.min.js"

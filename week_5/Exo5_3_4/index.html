@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+  	<meta charset="utf-8">
+<script src="https://unpkg.com/ipfs/dist/index.min.js"></script>
+     <script src="index.js"></script>
+     <script src="abi.js"></script>
+     <!-- <script src="abi.js"></script> -->
+
+<h1>Chargement d'image dans IPFS</h1>
+<input type="file" id="fichierImage">
+<button onclick="charger()">Charger image</button>
+<a id="lien"></a>	
+<br>
+<button onclick="recupererDernierImage()">Derniere image</button>
+<img src="" alt="" id="imageRecupere" height="350px">
+<div id="imgtxt"></div>
+
+  </body>
+</html>

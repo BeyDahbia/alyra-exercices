@@ -413,15 +413,9 @@ let dapp ={};
 				await PlaceMarche.postuler(addr);
 				
 				}	
-		async function listerOffres() {
-				 
-		var offres = await PlaceMarche.listerOffres();
-		for (var i = 0; i < offres.length; i++) {
-			offres[i];
-			document.getElementById('offre').innerHTML="L'offre n° " +(i++)+" = "+offres[i];
-		}
+		
 					
-					}	
+						
 		async function accepterOffre() {
 					addr = document.getElementById('acceptOffr').value; 
 					await PlaceMarche.accepterOffre(addr);
@@ -441,7 +435,14 @@ let dapp ={};
 					console.log("livraison "+addr);
 					}				
 
-
+        async function listerOffres() {
+				 
+		var offres = await PlaceMarche.listerOffres();
+		for (var i = 0; i < offres.length; i++) {
+			offres[i];
+			document.getElementById('offre').innerHTML="L'offre n° " +(i++)+" = "+offres[i];
+		}
+	}
 
 
 

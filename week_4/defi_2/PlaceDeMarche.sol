@@ -31,7 +31,7 @@ contract PlaceMarche {
         uint256 reputation;
     }
  
-  mapping(address => Demande) public demandes;
+ 
   mapping(address => Entreprise) public entreprises;
   mapping(address => Illustrateur) public illustrateurs;
   Demande [] public offres ;
@@ -56,7 +56,7 @@ contract PlaceMarche {
   }
   
   function ajouterDemande(string  memory titre, uint256 remuneration, uint256 delai ,uint256 reputationMin) payable public returns (Demande memory) {
-      require(entreprises[msg.sender].reputation==1);
+      require(entreprises[msg.sender].reputation>=1);
       Demande memory demande;
       uint256 prixComiss = (remuneration * 2/100);
       demande.remuneration = prixComiss + msg.value;
